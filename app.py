@@ -1,13 +1,22 @@
 # Importamos Flask para criar a API e request/jsonify para manipular requisições e respostas
 from flask import Flask, request, jsonify
-import sqlite3  # Biblioteca para interagir com o banco de dados SQLite
+import sqlite3  # Importamos a extensão SQLite para criar e manipular o banco de dados
+# Importamos a extensão CORS para permitir requisições de origens diferentes
+from flask_cors import CORS
 
 # Criamos a aplicação Flask
 # O Flask precisa saber qual é o arquivo principal do programa, então passamos "__name__" como referência
 app = Flask(__name__)
+CORS(app)
 
 # Criamos uma rota para o endpoint "/pague"
 # Quando acessarmos http://127.0.0.1:5000/pague, essa função será chamada automaticamente
+
+# Same-Origin Policy (Política de Mesma Origem)
+# A política de mesma origem é um conceito de segurança que restringe como um documento ou script carregado de um origem pode interagir com um recurso de outra origem.
+
+# CORS - Cross-Origin Resource Sharing (Compartilhamento de Recursos de Origem Diferentes)
+# Permite que um site acesse recursos de outro site, mesmo que estejam em domínios diferentes
 
 
 @app.route("/pague")
